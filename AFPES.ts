@@ -1,23 +1,51 @@
+console.log(
+  "Starting Alliance For Peacebuilding - Eirene Simplification application.",
+);
+
+console.log("[1/4] Importing code libraries for use.");
 import * as xlsx from "@mirror/xlsx";
+import { parseArgs } from "jsr:@std/cli/parse-args";
+console.log("[1/4] Sucessfully imported code libraries for use.");
 
-// Change Variables to fit:
-const XLSXFilePath = "";
+console.log("[2/4] Parsing code arguments and creating file names for use.");
+const Current_Date = new Date();
+const Timestamp = [
+  +("0" + (Current_Date.getMonth() + 1)).slice(-2) + "-" +
+  ("0" + Current_Date.getDate()).slice(-2) + "-" + Current_Date.getFullYear() +
+  " " + Current_Date.getHours() + "" + Current_Date.getMinutes() + "" +
+  Current_Date.getSeconds(),
+];
+const Results_CSV_Filename = "C:\\Users\\LYS\\Documents\\Code\\AFPES\\" +
+  "Eirene Peacebuilding Database Subgroups " + Timestamp + ".csv";
 
-// Interesting --allow-hrtime
+const args = parseArgs(Deno.args, {
+  boolean: ["help", "debug"],
+  string: ["AFPE", "Export"],
+  default: { AFPE: ".\\EAFP.xlsx", Export: Results_CSV_Filename },
+});
 
-/*
-const Check_Items = [
-    "Existence and frequency of interaction between groups",
-    "Gender Equality",
-    "Integration of marginalized groups",
-    "Knowledge of Social Cohesion",
-    "Level of discrimination",
-    "Attitudes towards peace and reconciliation processes",
-    "Community perceptions of youth",
-    "Economic cohesion",
-    "Engagement in community",
-]
-*/
+async function Check_If_File_Exists(FilePath: string) {
+  try {
+    await Deno.lstat(FilePath);
+  } catch (FileError) {
+    if (!(FileError instanceof Deno.errors.NotFound)) {
+      throw FileError;
+    }
+    if (args.debug) {
+      console.log(FileError);
+    }
+  }
+}
+
+Check_If_File_Exists(args.AFPE);
+Check_If_File_Exists(args.Export);
+console.log(
+  "[2/4] Completed parsing code arguments and creating file names for use. Using based AFP Eirene Excel file:" +
+    args.AFPE + " and export file: " + args.Export,
+);
+
+console.log("[3/4] Processing logic against Excel file: " + args.AFPE);
+const XLSXFilePath = args.AFPE;
 
 const Check_Items = [
   "% who perceive trust or lack thereof within their neighborhood",
@@ -66,16 +94,16 @@ const Check_Items = [
   "Quality of relationship between groups (Trust)",
   "Rule of Law (Confidence in Justice System)",
   "Trust and confidence in conflict resolving mechanisms",
-  "Trust in government institutions",
+  "Trust in government institutions"
 ];
 
 const Base_Excel_File = await Deno.readFile(XLSXFilePath);
 const Base_Excel_File_Content = xlsx.read(Base_Excel_File);
-const Database_Worksheet_Array = xlsx.utils.sheet_to_row_object_array(
+const Database_Worksheet_Array: Array<string> = xlsx.utils.sheet_to_json(
   Base_Excel_File_Content["Sheets"]["Database"],
 );
 const Sources_Worksheet = Base_Excel_File_Content["Sheets"]["Sources"];
-const Sources_Worksheet_Array = xlsx.utils.sheet_to_row_object_array(
+const Sources_Worksheet_Array: Array<string> = xlsx.utils.sheet_to_json(
   Sources_Worksheet,
 );
 
@@ -107,59 +135,48 @@ function Find_In_Worksheets(
   const Report_ID_Array = [];
   for (
     let Database_Row = 0;
-    Database_Row < (Database_Array.length + 1);
+    Database_Row < (Database_Array.length);
     Database_Row++
   ) {
-    try {
-      if (Database_Array[Database_Row]["Area Sub-Group"].includes(Query)) {
-        const Report_ID = String(Database_Array[Database_Row]["#"]);
-        if (!Report_ID_Array.includes(Report_ID)) {
-          Worksheet_Data[Report_ID] = {
-            "Title": Database_Array[Database_Row]["Title"].replace(/,/g, ""),
-            "Country": Database_Array[Database_Row]["Country"].replace(
-              /,/g,
-              "",
-            ),
-            "Date Published": Database_Array[Database_Row]["Date Published"],
-            "Indicators": [],
-          };
+    if (Database_Array[Database_Row]["Area Sub-Group"].includes(Query)) {
+      const Report_ID = String(Database_Array[Database_Row]["#"]);
+      if (!Report_ID_Array.includes(Report_ID)) {
+        Worksheet_Data[Report_ID] = {
+          "Title": Database_Array[Database_Row]["Title"].replace(/,/g, ""),
+          "Country": Database_Array[Database_Row]["Country"].replace(
+            /,/g,
+            "",
+          ),
+          "Date Published": Database_Array[Database_Row]["Date Published"],
+          "Indicators": [],
+        };
+        Worksheet_Data[Report_ID]["Indicators"].push(
+          Database_Array[Database_Row]["Indicator"].replace(/,/g, ""),
+        );
+        const Source_Link = Find_Source_Link(
+          Sources,
+          Sources_Array,
+          Database_Array[Database_Row]["#"],
+        );
+        Worksheet_Data[Report_ID]["Link"] = Source_Link;
+        Report_ID_Array.push(Report_ID);
+      } else {
+        if (
+          !Worksheet_Data[Report_ID]["Indicators"].includes(
+            Database_Array[Database_Row]["Indicator"].replace(/,/g, ""),
+          )
+        ) {
           Worksheet_Data[Report_ID]["Indicators"].push(
             Database_Array[Database_Row]["Indicator"].replace(/,/g, ""),
           );
-          const Source_Link = Find_Source_Link(
-            Sources,
-            Sources_Array,
-            Database_Array[Database_Row]["#"],
-          );
-          Worksheet_Data[Report_ID]["Link"] = Source_Link;
-          Report_ID_Array.push(Report_ID);
-        } else {
-          try {
-            if (
-              !Worksheet_Data[Report_ID]["Indicators"].includes(
-                Database_Array[Database_Row]["Indicator"].replace(/,/g, ""),
-              )
-            ) {
-              Worksheet_Data[Report_ID]["Indicators"].push(
-                Database_Array[Database_Row]["Indicator"].replace(/,/g, ""),
-              );
-            }
-          } catch {
-            console.log();
-          }
         }
       }
-    } catch {
-      console.log("Found error on (Database Worksheets):");
-      console.log(
-        "Row " + Database_Row + " Data:" + Database_Array[Database_Row],
-      );
     }
   }
   return Worksheet_Data;
 }
 
-const Results = [];
+const Results = Array<string>;
 
 for (const Item of Check_Items) {
   const Item_Results = Find_In_Worksheets(
@@ -170,28 +187,18 @@ for (const Item of Check_Items) {
   );
   Results[Item] = Item_Results;
 }
-console.log(Results);
+console.log("[3/4] Successfully processed logic against Excel file.");
 
-// Write to CSV File.
-const Current_Date = new Date();
-const Timestamp = [
-  +("0" + (Current_Date.getMonth() + 1)).slice(-2) + "-" +
-  ("0" + Current_Date.getDate()).slice(-2) + "-" + Current_Date.getFullYear() +
-  " " + Current_Date.getHours() + "" + Current_Date.getMinutes() + "" +
-  Current_Date.getSeconds(),
-];
+console.log("[4/4] Writing processed results (in CSV format) to: " + args.Export);
 let Results_Written_To_CSV = 0;
-const Results_CSV_Filename = "C:\\Users\\LYS\\Documents\\Code\\AFPES\\" +
-  "Eirene Peacebuilding Database Subgroups " + Timestamp + ".csv";
 const Field_Separator = ",";
 Deno.writeTextFile(
-  Results_CSV_Filename,
+  args.Export,
   "Subgroup" + Field_Separator + "Title" + Field_Separator + "Indicators" +
     Field_Separator + "Link" + Field_Separator + "Report ID" + Field_Separator +
     "Country" + Field_Separator + "Date Published\n",
   { append: true },
 );
-// console.log("Subgroup|Title|Indicator|Link|Report ID|Country|Date Published")
 for (const Query in Results) {
   for (const Report_ID in Results[Query]) {
     const Indicators = Results[Query][Report_ID]["Indicators"].length;
@@ -200,7 +207,6 @@ for (const Query in Results) {
       Indicator_Number < Indicators;
       Indicator_Number++
     ) {
-      // console.log( Query + "|" + Results[Query][Report_ID]["Title"] + "|" + Results[Query][Report_ID]["Indicators"] + "|" + Results[Query][Report_ID]["Link"] + "|" + Report_ID + "|" + Results[Query][Report_ID]["Country"] + "|" + Results[Query][Report_ID]["Date Published"] );
       const Result = String(
         Query + Field_Separator +
           Results[Query][Report_ID]["Title"].replace(/\n|\r/g, "") +
@@ -213,16 +219,23 @@ for (const Query in Results) {
           Results[Query][Report_ID]["Country"] + Field_Separator +
           Results[Query][Report_ID]["Date Published"] + "\n",
       );
-      Deno.writeTextFile(Results_CSV_Filename, Result, { append: true });
+      Deno.writeTextFile(args.Export, Result, { append: true });
       Results_Written_To_CSV += 1;
-      // console.log( <SUBGROUP> + "|" + <TITLE> + "|" + <INDICATOR> + "|" + <LINK> + "|" + <REPORT ID> + "|" + <COUNTRY> + "|" + <DATE PUBLISHED> )
     }
   }
 }
 
 console.log(
-  "Successfully wrote " + Results_Written_To_CSV + " results to CSV file: " +
-    Results_CSV_Filename,
+  "[4/4] Successfully wrote " + Results_Written_To_CSV +
+    " results to CSV file: " +
+    args.Export,
 );
-// Run with:
-// deno run --allow-write=/home/vagrant/Desktop/ --allow-read=/home/vagrant/Desktop/ --allow-read=/home/vagrant/Downloads/ afp.ts
+
+const Finish_Date = new Date();
+// Calculate finish date/time difference, while convert Miliseconds to seconds
+const Application_duration = (Finish_Date.valueOf() - Current_Date.valueOf()) /
+  1000;
+console.log(
+  "Completed Alliance For Peacebuilding - Eirene Simplification application in " +
+    Application_duration + " seconds.",
+);
