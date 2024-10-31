@@ -2,7 +2,7 @@
 
 ## Alliance For Peacebuilding
 
-:v: Alliance For Peacebuilding (AFP) is an organization that supports
+<code style="color : aqua">☮</code> Alliance For Peacebuilding (AFP) is an organization that supports
 catalization of collective worldwide action, including advocating for governance
 related regulation and standards, collecting evidence, and telling the story of
 those affected by peace based challenges.
@@ -49,7 +49,7 @@ mentioned in below subgroups. AFPES Data Extraction from Eirene will extract the
 
 </details>
 
-From the following areas "Social Cohesion" and "Building Trust" subgroups:
+From the following areas "Social Cohesion" and "Trust" subgroups:
 
 <details>
 
