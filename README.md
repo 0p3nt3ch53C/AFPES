@@ -7,8 +7,7 @@ catalization of collective worldwide action, including advocating for governance
 related regulation and standards, collecting evidence, and telling the story of
 those affected by peace based challenges.
 
-:blue_book: Read more about Alliance For Peacebuilding [here]
-(https://www.allianceforpeacebuilding.org)
+:blue_book: Read more about Alliance For Peacebuilding [here](https://www.allianceforpeacebuilding.org)
 
 ## Eirene
 
@@ -17,11 +16,9 @@ works, evidence, and related data. AFP provides the capability for students,
 researchers, and those who can access the internet, the capability to review
 thier Eirene database.
 
-:blue_book: Read more about Alliance For Peacebuilding's Eirene Database [here]
-(https://www.allianceforpeacebuilding.org/eirene-peacebuilding-database).
+:blue_book: Read more about Alliance For Peacebuilding's Eirene Database [here](https://www.allianceforpeacebuilding.org/eirene-peacebuilding-database).
 
-:blue_book: Eirene Database (Box.com hosted Excel file) [here]
-(https://allianceforpeacebuilding.app.box.com/s/ggizicws9ah2rgg3w0tfkju5voi1mvt6).
+:blue_book: Eirene Database (Box.com hosted Excel file) [here](https://allianceforpeacebuilding.app.box.com/s/ggizicws9ah2rgg3w0tfkju5voi1mvt6).
 
 ## Eirene Simplification
 
