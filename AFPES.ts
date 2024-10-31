@@ -15,7 +15,7 @@ const Timestamp = [
   " " + Current_Date.getHours() + "" + Current_Date.getMinutes() + "" +
   Current_Date.getSeconds(),
 ];
-const Results_CSV_Filename = "C:\\Users\\LYS\\Documents\\Code\\AFPES\\" +
+const Results_CSV_Filename = 
   "Eirene Peacebuilding Database Subgroups " + Timestamp + ".csv";
 
 const args = parseArgs(Deno.args, {
@@ -94,7 +94,7 @@ const Check_Items = [
   "Quality of relationship between groups (Trust)",
   "Rule of Law (Confidence in Justice System)",
   "Trust and confidence in conflict resolving mechanisms",
-  "Trust in government institutions"
+  "Trust in government institutions",
 ];
 
 const Base_Excel_File = await Deno.readFile(XLSXFilePath);
@@ -189,7 +189,9 @@ for (const Item of Check_Items) {
 }
 console.log("[3/4] Successfully processed logic against Excel file.");
 
-console.log("[4/4] Writing processed results (in CSV format) to: " + args.Export);
+console.log(
+  "[4/4] Writing processed results (in CSV format) to: " + args.Export,
+);
 let Results_Written_To_CSV = 0;
 const Field_Separator = ",";
 Deno.writeTextFile(

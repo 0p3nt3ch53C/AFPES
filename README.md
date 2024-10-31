@@ -2,14 +2,20 @@
 
 ## Alliance For Peacebuilding
 
-:v: Alliance For Peacebuilding (AFP) is an organization that supports catalization of collective worldwide action, including advocating for governance related regulation and standards, collecting evidence, and telling the story of those affected by peace based challenges.  
+:v: Alliance For Peacebuilding (AFP) is an organization that supports
+catalization of collective worldwide action, including advocating for governance
+related regulation and standards, collecting evidence, and telling the story of
+those affected by peace based challenges.
 
 :blue_book: Read more about Alliance For Peacebuilding [here]
 (https://www.allianceforpeacebuilding.org)
 
 ## Eirene
 
-AFP maintains their Eirene database, which serves as a repository of collected works, evidence, and related data. AFP provides the capability for students, researchers, and those who can access the internet, the capability to review thier Eirene database.
+AFP maintains their Eirene database, which serves as a repository of collected
+works, evidence, and related data. AFP provides the capability for students,
+researchers, and those who can access the internet, the capability to review
+thier Eirene database.
 
 :blue_book: Read more about Alliance For Peacebuilding's Eirene Database [here]
 (https://www.allianceforpeacebuilding.org/eirene-peacebuilding-database).
@@ -19,21 +25,26 @@ AFP maintains their Eirene database, which serves as a repository of collected w
 
 ## Eirene Simplification
 
-In a project to simplify and parse data from Eirene, some in the project found the dataset to be large, and difficult to navigate for specific information. In order to support one use case to resolve this, the AFPES (Alliance For Peacebuilding - Eirene Simplification) application has been developed.
+In a project to simplify and parse data from Eirene, some in the project found
+the dataset to be large, and difficult to navigate for specific information. In
+order to support one use case to resolve this, the AFPES (Alliance For
+Peacebuilding - Eirene Simplification) application has been developed.
 
-This application is has no affiliation, support of, or legal connection to AFP or any other legal entity.
+This application is has no affiliation, support of, or legal connection to AFP
+or any other legal entity.
 
 ### AFPES Use Case
 
-AFPES Data Extraction from Eirene will extract the following data points / criteria:
+AFPES Data Extraction from Eirene will extract the following data points /
+criteria:
 
-* Subgroup
-* Title
-* Indicator
-* Link
-* Report ID
-* Country
-* Date Published
+- Subgroup
+- Title
+- Indicator
+- Link
+- Report ID
+- Country
+- Date Published
 
 From the following areas "Social Cohesion" and "Building Trust" subgroups:
 
@@ -85,16 +96,17 @@ From the following areas "Social Cohesion" and "Building Trust" subgroups:
 46. "Trust and confidence in conflict resolving mechanisms",
 47. "Trust in government institutions"
 
-The data above is collected by AFPES, in order to review select datapoints mentioned in above criteria
+The data above is collected by AFPES, in order to review select datapoints
+mentioned in above criteria
 
 ### AFPES Data Export
 
-The data processed in AFPES is exported as a CSV file (NOTE: Data from AFP Eirene that contained commas, will be stripped as part of processing).
-The format will look similar to this:
+The data processed in AFPES is exported as a CSV file (NOTE: Data from AFP
+Eirene that contained commas, will be stripped as part of processing). The
+format will look similar to this:
 
 ```
 Subgroup,Title,Indicators,Link,Report ID,Country,Date Published
 % who perceive trust or lack thereof within their neighborhood,Towards a social cohesion index for South Africa using SARB data,Inter-group trust,https://static1.squarespace.com/static/5db70e83fc0a966cf4cc42ea/t/5f330df3dc8bae025343c25d/1597181428514/0100.pdf,100,South Africa,2017
 Trust and confidence in conflict resolving mechanisms,Evaluation report: Peaceful Empowerment in Arid Lands (PEARL) ,Perceived effectiveness of responses to conflict,https://static1.squarespace.com/static/5db70e83fc0a966cf4cc42ea/t/5f49305094cd4c07e3fb4309/1598632016736/1810.pdf,1810,Kenya,2017
 ```
-    
