@@ -32,8 +32,12 @@ or any other legal entity.
 
 ### AFPES Use Case
 
-AFPES Data Extraction from Eirene will extract the following data points /
-criteria:
+The criteria below is collected by AFPES, in order to review select datapoints
+mentioned in below subgroups. AFPES Data Extraction from Eirene will extract the following criteria:
+
+<details>
+
+<summary>Criteria</summary>
 
 - Subgroup
 - Title
@@ -43,7 +47,13 @@ criteria:
 - Country
 - Date Published
 
+</details>
+
 From the following areas "Social Cohesion" and "Building Trust" subgroups:
+
+<details>
+
+<summary>Subgroups</summary>
 
 1. "% who perceive trust or lack thereof within their neighborhood",
 2. "Attitudes towards diversity and pluralism",
@@ -93,8 +103,8 @@ From the following areas "Social Cohesion" and "Building Trust" subgroups:
 46. "Trust and confidence in conflict resolving mechanisms",
 47. "Trust in government institutions"
 
-The data above is collected by AFPES, in order to review select datapoints
-mentioned in above criteria
+</details>
+
 
 ### AFPES Data Export
 
@@ -102,8 +112,14 @@ The data processed in AFPES is exported as a CSV file (NOTE: Data from AFP
 Eirene that contained commas, will be stripped as part of processing). The
 format will look similar to this:
 
+<details>
+
+<summary>Example Export</summary>
+
 ```
 Subgroup,Title,Indicators,Link,Report ID,Country,Date Published
 % who perceive trust or lack thereof within their neighborhood,Towards a social cohesion index for South Africa using SARB data,Inter-group trust,https://static1.squarespace.com/static/5db70e83fc0a966cf4cc42ea/t/5f330df3dc8bae025343c25d/1597181428514/0100.pdf,100,South Africa,2017
 Trust and confidence in conflict resolving mechanisms,Evaluation report: Peaceful Empowerment in Arid Lands (PEARL) ,Perceived effectiveness of responses to conflict,https://static1.squarespace.com/static/5db70e83fc0a966cf4cc42ea/t/5f49305094cd4c07e3fb4309/1598632016736/1810.pdf,1810,Kenya,2017
 ```
+
+</details>
