@@ -123,3 +123,36 @@ Trust and confidence in conflict resolving mechanisms,Evaluation report: Peacefu
 ```
 
 </details>
+
+
+### AFPES Technical Details
+
+<p align="left">
+    <a href="https://coveralls.io/github/badges/shields">
+        <img src="https://img.shields.io/coveralls/github/badges/shields"
+            alt="Code Coverage"></a>
+    <a href="https://www.typescriptlang.org">
+        <img src="https://img.shields.io/badge/Code-TypeScript-blue?logo=typescript&logoColor=blue"
+            alt="TypeScript"></a>
+    <a href="https://deno.com">
+        <img src="https://img.shields.io/badge/Runtime-Deno-white?logo=deno&logoColor=f5f5f5"
+            alt="Deno"></a>
+</p>
+
+
+The AFPES is written in Typescript, compiled in Deno.
+
+<p align="left">
+    <a href="https://apple.com">
+        <img src="https://img.shields.io/badge/Apple%20MacOS-gray?logo=apple&logoColor=white"
+            alt="Apple/MacOS"></a>
+    <a href="https://linux.org">
+        <img src="https://img.shields.io/badge/GNU%2FLinux-gray?logo=linux&logoColor=white"
+            alt="Linux"></a>
+    <a href="https://microsoft.com">
+        <img src="https://img.shields.io/badge/Microsoft%20Windows-gray?logo=c%2B%2B&logoColor=blue"
+            alt="Windows"></a>
+</p>
+
+
+The AFPES application is compiled to work on multiple operating systems, including Apple MacOS, GNU/Linux, and Microsoft Windows.
