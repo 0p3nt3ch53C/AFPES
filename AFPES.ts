@@ -234,7 +234,6 @@ console.log(
 );
 
 const Finish_Date = new Date();
-// Calculate finish date/time difference, while convert Miliseconds to seconds
 const Application_duration = (Finish_Date.valueOf() - Current_Date.valueOf()) /
   1000;
 console.log(
