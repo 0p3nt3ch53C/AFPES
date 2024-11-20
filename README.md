@@ -158,7 +158,7 @@ This tells AFPES where the exported data (in CSV format) should go. By default (
 In example: ```--Export "Log.csv"```
 
 Full example (Windows)*: ```AFPES.exe --AFPE "AfP_EirenePeacebuildingDatabase_2.2020.xlsx" --Export "Log.csv"```
-* Builds off of previous example explained in "--AFPES".
+* Builds off of previous example explained in "--AFPE".
 
 
 #### None
