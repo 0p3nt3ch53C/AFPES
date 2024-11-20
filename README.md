@@ -1,13 +1,17 @@
 # Alliance For Peacebuilding - Eirene Simplification
 
+A project written to help support the Alliance For Peacebuilding's Eirene
+Database efforts, with simplification of data querying/parsing.
+
 ## Alliance For Peacebuilding
 
-<code style="color : aqua">☮</code> Alliance For Peacebuilding (AFP) is an organization that supports
-catalization of collective worldwide action, including advocating for governance
-related regulation and standards, collecting evidence, and telling the story of
-those affected by peace based challenges.
+<code style="color : aqua">☮</code> Alliance For Peacebuilding (AFP) is an
+organization that supports catalization of collective worldwide action,
+including advocating for governance related regulation and standards, collecting
+evidence, and telling the story of those affected by peace based challenges.
 
-:blue_book: Read more about Alliance For Peacebuilding [here](https://www.allianceforpeacebuilding.org).
+:blue_book: Read more about Alliance For Peacebuilding
+[here](https://www.allianceforpeacebuilding.org).
 
 ## Eirene
 
@@ -16,16 +20,21 @@ works, evidence, and related data. AFP provides the capability for students,
 researchers, and those who can access the internet, the capability to review
 thier Eirene database.
 
-:blue_book: Read more about Alliance For Peacebuilding's Eirene Database [here](https://www.allianceforpeacebuilding.org/eirene-peacebuilding-database).
+:blue_book: Read more about Alliance For Peacebuilding's Eirene Database
+[here](https://www.allianceforpeacebuilding.org/eirene-peacebuilding-database).
 
-:blue_book: Eirene Database ([Box.com](https://www.box.com/) hosted Excel file) [here](https://allianceforpeacebuilding.app.box.com/s/ggizicws9ah2rgg3w0tfkju5voi1mvt6).
+:blue_book: Eirene Database ([Box.com](https://www.box.com/) hosted Excel file)
+[here](https://allianceforpeacebuilding.app.box.com/s/ggizicws9ah2rgg3w0tfkju5voi1mvt6).
 
 ## Eirene Simplification
 
 In a project to simplify and parse data from Eirene, some in the project found
 the dataset to be large, and difficult to navigate for specific information. In
 order to support one use case to resolve this, the AFPES (Alliance For
-Peacebuilding - Eirene Simplification) application has been developed.
+Peacebuilding - Eirene Simplification) application has been developed. This
+project (and further, application) have been written to make the data more
+parsable and queryable as a csv, based on select fields (and tables) from the
+Eirene Excel spreadsheet (mentioned above).
 
 This application is has no affiliation, support of, or legal connection to AFP
 or any other legal entity.
@@ -33,7 +42,8 @@ or any other legal entity.
 ### AFPES Use Case
 
 The criteria below is collected by AFPES, in order to review select datapoints
-mentioned in below subgroups. AFPES Data Extraction from Eirene will extract the following criteria:
+mentioned in below subgroups. AFPES Data Extraction from Eirene will extract the
+following criteria:
 
 <details>
 
@@ -105,7 +115,6 @@ From the following areas "Social Cohesion" and "Trust" subgroups:
 
 </details>
 
-
 ### AFPES Data Export
 
 The data processed in AFPES is exported as a CSV file (NOTE: Data from AFP
@@ -124,7 +133,6 @@ Trust and confidence in conflict resolving mechanisms,Evaluation report: Peacefu
 
 </details>
 
-
 ### AFPES Technical Details
 
 <p align="left">
@@ -138,7 +146,6 @@ Trust and confidence in conflict resolving mechanisms,Evaluation report: Peacefu
         <img src="https://img.shields.io/badge/Runtime-Deno-white?logo=deno&logoColor=f5f5f5"
             alt="Deno"></a>
 </p>
-
 
 The AFPES is written in Typescript, compiled in Deno.
 
@@ -154,5 +161,5 @@ The AFPES is written in Typescript, compiled in Deno.
             alt="Windows"></a>
 </p>
 
-
-The AFPES application is compiled to work on multiple operating systems, including Apple MacOS, GNU/Linux, and Microsoft Windows.
+The AFPES application is compiled to work on multiple operating systems,
+including Apple MacOS, GNU/Linux, and Microsoft Windows.

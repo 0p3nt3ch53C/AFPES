@@ -15,8 +15,8 @@ const Timestamp = [
   " " + Current_Date.getHours() + "" + Current_Date.getMinutes() + "" +
   Current_Date.getSeconds(),
 ];
-const Results_CSV_Filename = 
-  "Eirene Peacebuilding Database Subgroups " + Timestamp + ".csv";
+const Results_CSV_Filename = "Eirene Peacebuilding Database Subgroups " +
+  Timestamp + ".csv";
 
 const args = parseArgs(Deno.args, {
   boolean: ["help", "debug"],

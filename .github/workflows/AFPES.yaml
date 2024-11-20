@@ -10,16 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - name: Setup Deno
-      uses: denoland/setup-deno@v2
-      with:
-        deno-version: v2.x
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
 
-    - name: Run Lint
-      run: deno lint AFPES.ts
+      - name: Run Lint
+        run: deno lint AFPES.ts
 
-    - name: Run Test
-      run: deno test AFPES.ts
+      - name: Run Test
+        run: deno test AFPES.ts
 
-    - name: Run Check
-      run: deno check AFPES.ts
+      - name: Run Check
+        run: deno check AFPES.ts
