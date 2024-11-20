@@ -59,6 +59,7 @@ following criteria:
 
 </details>
 
+
 From the following areas "Social Cohesion" and "Trust" subgroups:
 
 <details>
@@ -132,6 +133,40 @@ Trust and confidence in conflict resolving mechanisms,Evaluation report: Peacefu
 ```
 
 </details>
+
+
+### AFPES Example Run
+
+When attempting to run AFPES, use the following as parameters / arguments:
+
+
+#### --AFPE
+
+```"--AFPE"```:
+This tells AFPES where the file for the Eirene database (Excel file) is located. By default (unless specified) AFPES will assume the filename and location is in the same directory AFPES is running from, and is named 'EAFP.xlsx'.
+
+In example: ```--AFPE "AfP_EirenePeacebuildingDatabase_2.2020.xlsx"```
+
+Full example (Windows): ```.\AFPES.exe --AFPE "AfP_EirenePeacebuildingDatabase_2.2020.xlsx"```
+
+
+#### --Export
+
+```"--Export"```:
+This tells AFPES where the exported data (in CSV format) should go. By default (unless specified) AFPES will write a file to the same filename and location in the same directory AFPES is running from, named "Eirene Peacebuilding Database Subgroups MM-DD-YYYY HHMMSS.csv". Timestamp (MM-DD-YYYY HHMMSS) follows the format here: first MM = two digit month, DD = two digit day, YYYY = four digit year(s), HH two digit hour(s) (based on 24 hour clock, not 12hour clock), second MM = two digit minute(s), SS = two digit second(s).
+
+In example: ```--Export "Log.csv"```
+
+Full example (Windows)*: ```AFPES.exe --AFPE "AfP_EirenePeacebuildingDatabase_2.2020.xlsx" --Export "Log.csv"```
+* Builds off of previous example explained in "--AFPES".
+
+
+#### None
+
+AFPES can be run with no arguments, provided you follow the defaults in the above arguments direction. Based on the arguments above, if you simply have a file "EAFP.xlsx" in the same directory as the AFPES application, you can run this application without any arguments, and we should expect to see an additional file (e.g., "Eirene Peacebuilding Database Subgroups 11-01-2024 170954.csv") when AFPES is completed.
+
+Example: ```AFPES.exe```
+
 
 ### AFPES Technical Details
 

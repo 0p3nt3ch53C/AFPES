@@ -19,7 +19,6 @@ const Results_CSV_Filename = "Eirene Peacebuilding Database Subgroups " +
   Timestamp + ".csv";
 
 const args = parseArgs(Deno.args, {
-  boolean: ["help", "debug"],
   string: ["AFPE", "Export"],
   default: { AFPE: ".\\EAFP.xlsx", Export: Results_CSV_Filename },
 });
