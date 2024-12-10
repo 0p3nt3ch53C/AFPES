@@ -116,6 +116,8 @@ From the following areas "Social Cohesion" and "Trust" subgroups:
 
 </details>
 
+Subgroups can either be updated in code (and run code accordingly), or a pull request can be submitted to request an update.
+
 ### AFPES Data Export
 
 The data processed in AFPES is exported as a CSV file (NOTE: Data from AFP
