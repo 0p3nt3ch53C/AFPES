@@ -1,6 +1,6 @@
 # Alliance For Peacebuilding - Eirene Simplification
 
-A project written to help support the Alliance For Peacebuilding's Eirene
+A small project written to help support the Alliance For Peacebuilding's Eirene
 Database efforts, with simplification of data querying/parsing.
 
 ## Alliance For Peacebuilding
