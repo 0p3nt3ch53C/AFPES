@@ -184,7 +184,7 @@ Example: ```AFPES.exe```
             alt="Deno"></a>
 </p>
 
-The AFPES is written in Typescript, compiled in the Deno runtime.
+The AFPES is written in TypeScript, compiled in the Deno runtime.
 
 <p align="left">
     <a href="https://apple.com">
